@@ -18,8 +18,8 @@ public class RecorderCreateCommand {
     @NotBlank(message = "must not be blank")
     private String name;
 
-    @NotNull(message = "must be in the past")
-    @Past
+    @NotNull(message = "must not be  null")
+    @Past(message = "must be in the past")
     private LocalDate dateOfBirth;
 
 }

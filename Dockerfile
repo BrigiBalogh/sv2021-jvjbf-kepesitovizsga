@@ -1,6 +1,6 @@
 FROM adoptopenjdk:16-jre-hotspot as builder
 WORKDIR application
-COPY target/sv2021-jvjbf-kepesitovizsga-0.0.1-SNAPSHOT.jar guinessapp .jar
+COPY target/sv2021-jvjbf-kepesitovizsga-0.0.1-SNAPSHOT.jar guinessapp.jar
 RUN java -Djarmode=layertools -jar guinessapp.jar extract
 
 FROM adoptopenjdk:16-jre-hotspot
@@ -16,3 +16,6 @@ COPY --from=builder application/snapshot-dependencies/ ./
 COPY --from=builder application/application/ ./
 ENTRYPOINT ["java", \
 "org.springframework.boot.loader.JarLauncher"]
+
+
+

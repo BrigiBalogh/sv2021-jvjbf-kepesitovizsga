@@ -26,11 +26,9 @@ public class WorldRecordCreateCommand {
 
     @NotNull(message ="must not be null")
     private LocalDate dateOfRecord;
-   // @NotNull(message = "must not be null")
-   // private Long recorderId;
-   private String recorderName;
 
 
-
+    @NotNull(message = "must not be null")
+    private Long recorderId;
 
 }

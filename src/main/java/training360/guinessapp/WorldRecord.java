@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "worldrecords")
+@Table(name = "world_record")
 public class WorldRecord {
 
     @Id
@@ -22,12 +22,22 @@ public class WorldRecord {
 
     private Double value;
 
+    @Column(name = "unit_of_measure")
     private String unitOfMeasure;
 
+    @Column(name = "date_of_record")
     private LocalDate dateOfRecord;
 
-    private String recorderName;
+    @ManyToOne
+    @JoinColumn(name = "recorder_id")
+    private Recorder recorder;
 
-  //  private Long recorderId;
 
+    public WorldRecord(String description, Double value, String unitOfMeasure, LocalDate dateOfRecord, Recorder recorder) {
+        this.description = description;
+        this.value = value;
+        this.unitOfMeasure = unitOfMeasure;
+        this.dateOfRecord = dateOfRecord;
+        this.recorder = recorder;
+    }
 }
