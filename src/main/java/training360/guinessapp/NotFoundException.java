@@ -10,7 +10,7 @@ public class NotFoundException extends AbstractThrowableProblem {
     public NotFoundException(long id) {
         super(URI.create("mentortools/not-found"),
                 "Not found",
-              Status.NOT_FOUND,
+                Status.NOT_FOUND,
                 String.format("Not found with id '%d'", id));
     }
 }

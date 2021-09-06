@@ -24,7 +24,7 @@ public class WorldRecordCreateCommand {
     @NotBlank(message = "must not be blank")
     private String unitOfMeasure;
 
-    @NotNull(message ="must not be null")
+    @NotNull(message = "must not be null")
     private LocalDate dateOfRecord;
 
 

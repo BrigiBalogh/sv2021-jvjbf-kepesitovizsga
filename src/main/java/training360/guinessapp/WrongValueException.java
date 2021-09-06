@@ -3,7 +3,7 @@ package training360.guinessapp;
 import org.zalando.problem.AbstractThrowableProblem;
 import org.zalando.problem.Status;
 
-import javax.validation.constraints.NotNull;
+
 import java.net.URI;
 
 public class WrongValueException extends AbstractThrowableProblem {
@@ -15,7 +15,7 @@ public class WrongValueException extends AbstractThrowableProblem {
         super(URI.create("world-record/wrong-value"),
                 "Can not beat",
                 Status.BAD_REQUEST,
-                String.format("Can not beat if value larger than new record value ",value,newRecordValue));
+                String.format("Can not beat if value larger than new record value ", value, newRecordValue));
 
     }
 }

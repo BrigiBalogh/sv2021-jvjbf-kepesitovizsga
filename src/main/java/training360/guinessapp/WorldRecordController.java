@@ -20,7 +20,6 @@ public class WorldRecordController {
     private final WorldRecordService worldRecordService;
 
 
-
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(summary = "Creates a world record", description = " New  world record has been created.")

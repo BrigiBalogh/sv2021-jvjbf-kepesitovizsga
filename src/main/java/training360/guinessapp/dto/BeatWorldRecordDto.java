@@ -22,7 +22,7 @@ public class BeatWorldRecordDto {
     private String newRecorderName;
     private Double newRecordValue;
 
-    private  Double recordDifference;
+    private Double recordDifference;
 }
 
 

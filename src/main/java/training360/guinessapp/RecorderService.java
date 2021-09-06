@@ -27,14 +27,14 @@ public class RecorderService {
     }
 
     public Recorder findById(Long id) {
-            return recorderRepository.findById(id)
-                    .orElseThrow(() -> new NotFoundException(id));
+        return recorderRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException(id));
 
     }
 
     public List<RecorderShortDto> getRecorders() {
         List<Recorder> recorders = recorderRepository.getFilteredRecorders();
-        return recorders.stream().map(recorder -> mapper.map(recorder,RecorderShortDto.class))
+        return recorders.stream().map(recorder -> mapper.map(recorder, RecorderShortDto.class))
                 .toList();
     }
 }

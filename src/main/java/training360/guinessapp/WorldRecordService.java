@@ -32,18 +32,18 @@ public class WorldRecordService {
     @Transactional
     public BeatWorldRecordDto beatWorldRecord(Long id, BeatWorldRecordCommand command) {
         WorldRecord oldWorldRecord = findById(id);
-        Recorder newRecorder =recorderService.findById(command.getNewRecorderId());
+        Recorder newRecorder = recorderService.findById(command.getNewRecorderId());
         if (oldWorldRecord.getValue() > command.getNewRecordValue()) {
-            throw new WrongValueException(oldWorldRecord.getValue(),command.getNewRecordValue());
+            throw new WrongValueException(oldWorldRecord.getValue(), command.getNewRecordValue());
         }
-        double difference = command.getNewRecordValue()- oldWorldRecord.getValue();
+        double difference = command.getNewRecordValue() - oldWorldRecord.getValue();
 
 
         BeatWorldRecordDto beatWorldRecordDto = new BeatWorldRecordDto(oldWorldRecord.getDescription(),
-               oldWorldRecord.getUnitOfMeasure(),oldWorldRecord.getRecorder().getName(),
-                oldWorldRecord.getValue(),newRecorder.getName(), command.getNewRecordValue(),difference);
+                oldWorldRecord.getUnitOfMeasure(), oldWorldRecord.getRecorder().getName(),
+                oldWorldRecord.getValue(), newRecorder.getName(), command.getNewRecordValue(), difference);
 
-            return beatWorldRecordDto;
+        return beatWorldRecordDto;
     }
 
     private WorldRecord findById(Long id) {

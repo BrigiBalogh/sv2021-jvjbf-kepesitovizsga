@@ -23,9 +23,8 @@ public class RecorderController {
     private final RecorderService recorderService;
 
 
-
     @GetMapping
-    public List<RecorderShortDto> getRecorders(){
+    public List<RecorderShortDto> getRecorders() {
         return recorderService.getRecorders();
     }
 
@@ -37,7 +36,6 @@ public class RecorderController {
     public RecorderDto saveRecorder(@Valid @RequestBody RecorderCreateCommand command) {
         return recorderService.saveRecorder(command);
     }
-
 
 
 }
