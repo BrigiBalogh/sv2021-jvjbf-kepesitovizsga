@@ -9,17 +9,15 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import java.time.LocalDate;
 
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class RecorderCreateCommand {
 
-    @NotBlank(message = "must not be blank")
+    @NotBlank(message ="must not be blank" )
     private String name;
 
-    @NotNull(message = "must not be  null")
+    @NotNull(message ="must not be null" )
     @Past(message = "must be in the past")
     private LocalDate dateOfBirth;
-
 }

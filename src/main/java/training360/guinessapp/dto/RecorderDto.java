@@ -12,9 +12,6 @@ import java.time.LocalDate;
 public class RecorderDto {
 
     private Long id;
-
     private String name;
-
     private LocalDate dateOfBirth;
-
 }

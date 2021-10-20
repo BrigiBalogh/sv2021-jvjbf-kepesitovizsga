@@ -5,11 +5,12 @@ import org.zalando.problem.Status;
 
 import java.net.URI;
 
-public class NotFoundException extends AbstractThrowableProblem {
+public class WorldRecordNotFoundException extends AbstractThrowableProblem {
 
-    public NotFoundException(long id) {
-        super(URI.create("mentortools/not-found"),
-                "Not found",
+    public WorldRecordNotFoundException(Long id) {
+
+        super(URI.create("world-record/not-found"),
+                "World record not found",
                 Status.NOT_FOUND,
                 String.format("Not found with id '%d'", id));
     }

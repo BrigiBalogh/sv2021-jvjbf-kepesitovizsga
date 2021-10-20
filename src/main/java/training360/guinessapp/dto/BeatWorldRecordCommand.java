@@ -11,11 +11,9 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class BeatWorldRecordCommand {
 
-    @NotNull(message = "Recorder not found")
+    @NotNull(message = "must not be null")
     private Long newRecorderId;
 
-    @NotNull(message = "World record not found")
+    @NotNull(message = "must not be null")
     private Double newRecordValue;
-
-
 }
